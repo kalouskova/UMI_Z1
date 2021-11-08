@@ -33,7 +33,7 @@ class Node:
 
 
 ## Function to calculate the manhattan distance between a node and the nearest target
-def manhatanDistance(indices, position, i, j):
+def manhattanDistance(indices, position, i, j):
     return abs(indices[position][0] - i) + abs(indices[position][1] - j)
 
 ## Function to calculate the distance matrix, where [x,y] represents the distance from this position to the nearest target
@@ -44,7 +44,7 @@ def calcDistances():
             indices = zip(x, y)
             position = np.argmin(cdist(np.array([[i,j]]), indices))
 
-            distances[i][j] = manhatanDistance(indices, position, i, j)
+            distances[i][j] = manhattanDistance(indices, position, i, j)
 
 ## Function to append new node to lists
 def addNode(previousNode, coords):
